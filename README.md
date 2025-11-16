@@ -124,8 +124,8 @@ This app utilizes advanced **Machine Learning** (Support Vector Classifier) and 
 
 ## 👨‍💻 Developer
 
-**Junaid Khan**  
-_AI & ML Engineer • Passionate about healthcare AI & impactful tech_
+**Sumit Kumar**  
+_AI & ML Engineering Student • Passionate about healthcare AI & impactful tech_
 
 - **Email:** [sumitrajkumar2003@gmail.com](mailto:sumitrajkumar2003@gmail.com)
 - **Location:** Bhubaneswar, Odisha, India
