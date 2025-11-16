@@ -1,76 +1,46 @@
-🏥 AI-Powered Symptom-Based Disease Prediction Web App
+# 🏥 AI-Powered Disease Predictor Web App
 
-A Flask-based healthcare assistant that predicts diseases from user symptoms, using Machine Learning and a rich medical recommendation system.
+<div align="center">
+  <img src="static/img.png" alt="App Logo" width="160"/>
+</div>
 
-<img src="static/img.png" alt="App Logo" width="160"/>
+## 🚀 Overview
 
-🚀 Project Overview
+Welcome to the **AI-Powered Symptom-Based Disease Predictor** – your intelligent healthcare assistant that predicts potential diseases based on symptoms you provide!
 
-This project is an intelligent AI-driven healthcare web application that predicts possible diseases based on user symptoms.
-It integrates:
+This app utilizes advanced **Machine Learning** (Support Vector Classifier) and a rich medical recommendation engine to empower users with actionable health guidance.
 
-✔ Machine Learning (SVC Model)
+> ⚠️ **Note:** This application is for educational and informational purposes only, not a substitute for professional medical advice.
 
-✔ Symptom → Disease Prediction
+---
 
-✔ Disease Description
+## 🧠 Features
 
-✔ Precautions
+- **💡 Disease Prediction**
+  - Predicts disease leveraging a trained SVC ML model.
+  - Accepts comma-separated symptoms.
+  - Flags unrecognized symptoms with a friendly message.
 
-✔ Medications
+- **📋 Full Medical Info for Each Disease**
+  - 📝 **Description:** Short medical explanation.
+  - 🛡️ **Precautions:** Preventive measures.
+  - 💊 **Medications:** Common drugs.
+  - 🍏 **Diet:** Nutrition recommendations.
+  - 🏋️ **Workouts:** Suggested exercises.
 
-✔ Diet Recommendations
+- **🎤 Smart Input Handling**
+  - Normalizes input (spaces, hyphens, case, punctuation).
+  - Speech-to-Text via browser technology.
 
-✔ Workouts
+- **✨ Modern Web UI**
+  - Built using Flask, Jinja, HTML, Bootstrap.
+  - Multiple pages: Home, About, Contact, Developer, Blog.
 
-✔ Speech-to-text symptoms input
+---
 
-✔ Complete Frontend using HTML, Bootstrap, and Flask Jinja templates
+## 📂 Project Structure
 
-This system helps users quickly understand their potential health issues and take informed early steps.
-
-⚠ Not a medical diagnosis tool — it is for educational & informational purposes only.
-
-🧠 Features
-🔹 Disease Prediction
-
-Predicts disease using a trained Support Vector Classifier (SVC) model.
-
-Accepts comma-separated symptom input.
-
-If symptoms are not recognized, the system flags them politely.
-
-🔹 Full Medical Information
-
-For each predicted disease, the app provides:
-
-Information Type	Description
-📝 Description	Short medical explanation
-🛡️ Precautions	Preventive measures
-💊 Medications	General medicines
-🍎 Diet	Recommended foods
-🏋️ Workouts	Suggested exercises
-🔹 Smart Input Handling
-
-Symptom normalization (handles spaces, hyphens, case sensitivity, punctuation).
-
-Speech-to-Text input using browser speech recognition.
-
-🔹 Clean UI with Bootstrap
-
-Pages included:
-
-Home
-
-About
-
-Contact
-
-Developer
-
-Blog
-
-📂 Project Structure
+```
 ├── main.py
 ├── Model/
 │   └── svc.pkl
@@ -89,111 +59,94 @@ Blog
 │   └── blog.html
 └── static/
     └── img.png
+```
 
-⚙️ Technologies Used
-Category	Tools
-Backend	Flask
-Frontend	HTML, CSS, Bootstrap
-Machine Learning	Scikit-Learn
-Data Handling	Pandas, NumPy
-Model	SVC Classifier
-Speech Recognition	webkitSpeechRecognition()
-🛠 Installation & Setup
-1. Clone the Repository
-git clone https://github.com/yourusername/medical-disease-predictor.git
-cd medical-disease-predictor
+---
 
-2. Install Dependencies
-pip install flask pandas numpy scikit-learn
+## ⚙️ Technologies Used
 
-3. Ensure Model & Data Files Exist
+| Category            | Tools                   |
+|---------------------|------------------------|
+| Backend             | Flask                  |
+| Frontend            | HTML, CSS, Bootstrap   |
+| Machine Learning    | Scikit-Learn (SVC)     |
+| Data Handling       | Pandas, NumPy          |
+| Speech Recognition  | `webkitSpeechRecognition()` |
 
-Place:
+---
 
-svc.pkl inside Model/
+## 🛠 Installation & Setup
 
-all CSV files inside Data/
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/medical-disease-predictor.git
+   cd medical-disease-predictor
+   ```
 
-4. Run the App
-python main.py
+2. **Install Dependencies**
+   ```bash
+   pip install flask pandas numpy scikit-learn
+   ```
 
+3. **Setup Model & Data Files**
+   - Place `svc.pkl` in the `Model/` directory.
+   - Place all CSV files in the `Data/` directory.
 
-App runs at:
+4. **Run the App**
+   ```bash
+   python main.py
+   ```
+   App will be live at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
-http://127.0.0.1:5000/
+---
 
-🔍 How the Prediction Works
+## 🔍 How the Prediction Works
 
-User enters symptoms (e.g., itching, headache, nausea)
+- **Input:** User enters symptoms (e.g., _itching, headache, nausea_)
+- **Normalization:** Symptoms are lowercased, sanitized, mapped.
+- **Feature Vector:** 122-dimensional vector is constructed.
+- **Prediction:** SVC ML model outputs disease index.
+- **Response:** Disease info, description, precautions, medications, diet, workouts.
 
-Symptoms are normalized (lowercased, cleaned, converted to keys).
+---
 
-A 122-dimensional symptom vector is constructed.
+## 📸 Screenshots
 
-SVC model predicts a disease index.
+| Main Page | Prediction Result |
+|---|---|
+| ![Main Page](https://github.com/user-attachments/assets/5e5ce71e-41d1-4ef7-a957-52e3ab64618f) | ![Disease Result](https://github.com/user-attachments/assets/e0115868-66f8-41f1-a01e-dd2a7e30c9b0) |
 
-The disease index maps to actual disease name.
+| Description | Precaution | Medications | Workouts | Diets |
+|---|---|---|---|---|
+| ![Description](https://github.com/user-attachments/assets/cc58b103-0514-4a17-b244-53bfd0dbd274) | ![Precaution](https://github.com/user-attachments/assets/a71a0491-3425-4fa2-bb03-f3e342c72a21) | ![Medications](https://github.com/user-attachments/assets/15794263-bfe4-4de9-be69-4bb30f14d75c) | ![Workouts](https://github.com/user-attachments/assets/e3e4502f-34e3-40fe-9c4e-b9514677802f) | ![Diets](https://github.com/user-attachments/assets/4be91a28-7144-40e9-b82e-70647a7c2ab9) |
 
-Additional datasets provide:
+---
 
-description
+## 👨‍💻 Developer
 
-diet
+**Junaid Khan**  
+_AI & ML Engineer • Passionate about healthcare AI & impactful tech_
 
-medications
+- **Email:** [sumitrajkumar2003@gmail.com](mailto:sumitrajkumar2003@gmail.com)
+- **Location:** Bhubaneswar, Odisha, India
 
-workouts
+---
 
-precautions
+## 📜 License
 
-📸 Screenshots:-
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5e5ce71e-41d1-4ef7-a957-52e3ab64618f" />
+Distributed under the **MIT License**.
 
+---
 
-After cleacking Disease:
-<img width="1857" height="967" alt="image" src="https://github.com/user-attachments/assets/e0115868-66f8-41f1-a01e-dd2a7e30c9b0" />
+## ⭐ Special Notes
+- This project is an **educational demo** in machine learning for healthcare.
+- Not intended to replace medical professionals.
+- **Always consult a doctor for real medical concerns!**
 
+---
 
-After cleacking Description:
-<img width="1854" height="974" alt="image" src="https://github.com/user-attachments/assets/cc58b103-0514-4a17-b244-53bfd0dbd274" />
-
-
-After cleacking Precaution:
-<img width="1854" height="965" alt="image" src="https://github.com/user-attachments/assets/a71a0491-3425-4fa2-bb03-f3e342c72a21" />
-
-
-After cleacking Medications:
-<img width="1854" height="966" alt="image" src="https://github.com/user-attachments/assets/15794263-bfe4-4de9-be69-4bb30f14d75c" />
-
-
-After cleacking Workouts:
-<img width="1856" height="966" alt="image" src="https://github.com/user-attachments/assets/e3e4502f-34e3-40fe-9c4e-b9514677802f" />
-
-
-After cleacking Diets:
-<img width="1855" height="966" alt="image" src="https://github.com/user-attachments/assets/4be91a28-7144-40e9-b82e-70647a7c2ab9" />
-
-
-👨‍💻 Developer
-
-Junaid Khan — AI & ML Engineer
-Passionate about healthcare AI & developing impactful solutions.
-
-📞 Contact
-
-Email: junaidmehsuud035@gmail.com
-
-Phone: 03477155035
-Location: Dera Ismail Khan, KPK, Pakistan
-
-📜 License
-
-This project is licensed under the MIT License.
-
-⭐ Special Notes
-
-This app is an educational machine-learning demo.
-
-Not intended to replace medical professionals.
-
-Always consult a doctor for real medical concerns.
+<div align="center">
+  <strong>
+    If you find this project useful, please ⭐ star this repo and share with others!
+  </strong>
+</div>
