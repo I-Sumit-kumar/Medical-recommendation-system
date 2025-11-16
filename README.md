@@ -11,6 +11,8 @@ Welcome to the **AI-Powered Symptom-Based Disease Predictor** – your intellige
 This app utilizes advanced **Machine Learning** (Support Vector Classifier) and a rich medical recommendation engine to empower users with actionable health guidance.
 
 > ⚠️ **Note:** This application is for educational and informational purposes only, not a substitute for professional medical advice.
+>
+> It have to improve a lot we need train this model in Large amount of data to make it work for real
 
 ---
 
