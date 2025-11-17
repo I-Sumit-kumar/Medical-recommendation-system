@@ -4,39 +4,46 @@
   <img src="static/img.png" alt="App Logo" width="160"/>
 </div>
 
+---
+
 ## 🚀 Overview
 
-Welcome to the **AI-Powered Symptom-Based Disease Predictor** – your intelligent healthcare assistant that predicts potential diseases based on symptoms you provide!
+Welcome to the **AI-Powered Symptom-Based Disease Predictor** – your intelligent healthcare assistant that predicts possible diseases based on symptoms you provide.  
+Leverage the power of **Machine Learning** (SVC Model) and get enriched medical suggestions instantly!
 
-This app utilizes advanced **Machine Learning** (Support Vector Classifier) and a rich medical recommendation engine to empower users with actionable health guidance.
+> ⚠️ **Note:**  
+> This project is for **educational and informational** use—a real healthcare model needs much more data and medical validation!  
+> Help us improve: contribute large, diverse datasets for real-world use.
 
-> ⚠️ **Note:** This application is for educational and informational purposes only, not a substitute for professional medical advice.
->
-> It have to improve a lot we need train this model in Large amount of data to make it work for real
+---
+
+## 💫 Why Use This App?
+
+- **Instant Disease Prediction** from your symptoms
+- **Description, Precautions, Medications, Diet, and Workout** info, all in one place
+- **Speech recognition** for hands-free input
+- **Beautiful, Responsive Interface** built with Bootstrap
 
 ---
 
 ## 🧠 Features
 
-- **💡 Disease Prediction**
-  - Predicts disease leveraging a trained SVC ML model.
-  - Accepts comma-separated symptoms.
-  - Flags unrecognized symptoms with a friendly message.
+- **💡 Smart Disease Prediction**  
+  Use a trained Support Vector Classifier (SVC) to predict likely diseases.
 
-- **📋 Full Medical Info for Each Disease**
-  - 📝 **Description:** Short medical explanation.
-  - 🛡️ **Precautions:** Preventive measures.
-  - 💊 **Medications:** Common drugs.
-  - 🍏 **Diet:** Nutrition recommendations.
-  - 🏋️ **Workouts:** Suggested exercises.
+- **📝 Comprehensive Medical Info**  
+  - Description (quick explanation)
+  - Precautions (preventive steps)
+  - Medications (possible drugs)
+  - Diet (food to eat)
+  - Workouts (healthy exercises)
 
 - **🎤 Smart Input Handling**
-  - Normalizes input (spaces, hyphens, case, punctuation).
-  - Speech-to-Text via browser technology.
+  - Normalizes symptoms (spaces, hyphens, case, punctuation)
+  - Speech-to-Text supported
 
-- **✨ Modern Web UI**
-  - Built using Flask, Jinja, HTML, Bootstrap.
-  - Multiple pages: Home, About, Contact, Developer, Blog.
+- **✨ Modern and Responsive UI**
+  - Built with Flask, Jinja, HTML5, Bootstrap 5
 
 ---
 
@@ -67,13 +74,9 @@ This app utilizes advanced **Machine Learning** (Support Vector Classifier) and 
 
 ## ⚙️ Technologies Used
 
-| Category            | Tools                   |
-|---------------------|------------------------|
-| Backend             | Flask                  |
-| Frontend            | HTML, CSS, Bootstrap   |
-| Machine Learning    | Scikit-Learn (SVC)     |
-| Data Handling       | Pandas, NumPy          |
-| Speech Recognition  | `webkitSpeechRecognition()` |
+| Backend             | Frontend              | Machine Learning  | Data Handling       | Speech Input                  |
+|---------------------|----------------------|-------------------|---------------------|-------------------------------|
+| Flask               | HTML, Bootstrap      | scikit-learn SVC  | Pandas, NumPy       | webkitSpeechRecognition()     |
 
 ---
 
@@ -90,65 +93,67 @@ This app utilizes advanced **Machine Learning** (Support Vector Classifier) and 
    pip install flask pandas numpy scikit-learn
    ```
 
-3. **Setup Model & Data Files**
-   - Place `svc.pkl` in the `Model/` directory.
-   - Place all CSV files in the `Data/` directory.
+3. **Place Model & Data Files**
+   - Put `svc.pkl` in the `Model/` folder
+   - All CSVs go in the `Data/` folder
 
 4. **Run the App**
    ```bash
    python main.py
    ```
-   App will be live at: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+   **App will be live at:** [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ---
 
-## 🔍 How the Prediction Works
+## 🔍 How Prediction Works
 
-- **Input:** User enters symptoms (e.g., _itching, headache, nausea_)
-- **Normalization:** Symptoms are lowercased, sanitized, mapped.
-- **Feature Vector:** 122-dimensional vector is constructed.
-- **Prediction:** SVC ML model outputs disease index.
-- **Response:** Disease info, description, precautions, medications, diet, workouts.
-
----
-
-## 📸 Screenshots
-
-| Main Page | Prediction Result |
-|---|---|
-| ![Main Page](https://github.com/user-attachments/assets/5e5ce71e-41d1-4ef7-a957-52e3ab64618f) | ![Disease Result](https://github.com/user-attachments/assets/e0115868-66f8-41f1-a01e-dd2a7e30c9b0) |
-
-| Description | Precaution | Medications | Workouts | Diets |
-|---|---|---|---|---|
-| ![Description](https://github.com/user-attachments/assets/cc58b103-0514-4a17-b244-53bfd0dbd274) | ![Precaution](https://github.com/user-attachments/assets/a71a0491-3425-4fa2-bb03-f3e342c72a21) | ![Medications](https://github.com/user-attachments/assets/15794263-bfe4-4de9-be69-4bb30f14d75c) | ![Workouts](https://github.com/user-attachments/assets/e3e4502f-34e3-40fe-9c4e-b9514677802f) | ![Diets](https://github.com/user-attachments/assets/4be91a28-7144-40e9-b82e-70647a7c2ab9) |
+1. **Input:** You type symptoms (e.g., _itching, headache, nausea_) or use voice
+2. **Normalization:** App auto-formats symptoms, checks for errors
+3. **Vectorization:** Input vectorized for ML model (122 symptoms features)
+4. **Prediction:** SVC Model predicts possible disease
+5. **Response:** App returns description, precautions, medicines, diet, workouts
 
 ---
 
-## 👨‍💻 Developer
+## 🌟 Screenshots
+
+| Home Page | Main Prediction Page |
+|-----------|---------------------|
+| ![Home](https://github.com/user-attachments/assets/d0c19a3d-cc2e-4033-ab38-9167974aec5b) | ![Prediction](https://github.com/user-attachments/assets/2b875512-99de-44ec-b030-54372c8501f3) |
+
+| **Disease**                                                                                                   | **Description**                                                                                                | **Precautions**                                                                                                 |
+|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| ![Disease](https://github.com/user-attachments/assets/cf07a823-8626-43aa-8bdf-2f94d3fcf576)                  | ![Description](https://github.com/user-attachments/assets/1b4f83ce-b6a2-4297-aa1a-312a8bdd8324)               | ![Precautions](https://github.com/user-attachments/assets/4ea5a115-bda8-4c94-8471-709cedcc80fd)               |
+
+| **Medications**                                                                                              | **Workouts**                                                                                                   | **Diets**                                                                                                      |
+|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| ![Medications](https://github.com/user-attachments/assets/b5ce98ec-11f0-432c-8315-bb7e699e621e)              | ![Workouts](https://github.com/user-attachments/assets/2210e44d-e670-4fd5-92a8-1a5ea645cc2e)                  | ![Diets](https://github.com/user-attachments/assets/19e02469-dd58-4d1e-9c28-536b1b54823d)                     |
+## 👨‍💻 About the Developer
 
 **Sumit Kumar**  
-_AI & ML Engineering Student • Passionate about healthcare AI & impactful tech_
+_AI & ML Engineering Student | Healthcare AI Enthusiast_
 
-- **Email:** [sumitrajkumar2003@gmail.com](mailto:sumitrajkumar2003@gmail.com)
-- **Location:** Bhubaneswar, Odisha, India
+- 📧 [sumitrajkumar2003@gmail.com](mailto:sumitrajkumar2003@gmail.com)
+- 📍 Bhubaneswar, Odisha, India
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**.
+This project is licensed under the **MIT License**.
 
 ---
 
-## ⭐ Special Notes
-- This project is an **educational demo** in machine learning for healthcare.
-- Not intended to replace medical professionals.
-- **Always consult a doctor for real medical concerns!**
+## 🌈 Special Notes
+
+- This is **not a substitute for real medical advice or diagnosis.**
+- For actual health concerns, **always consult a licensed doctor.**
+- Contributions to improve dataset and accuracy are **highly welcome!**
 
 ---
 
 <div align="center">
   <strong>
-    If you find this project useful, please ⭐ star this repo and share with others!
+    ❤️ If you found this useful, please ⭐ star the repository and share your feedback. Collaborators & contributors always welcome!
   </strong>
 </div>
